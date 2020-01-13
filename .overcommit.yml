@@ -20,24 +20,41 @@ PreCommit:
     enabled: true
     on_warn: fail
     problem_on_unmodified_line: ignore
-    exclude:
-      - ".rubocop.yml"
 
   Reek:
     enabled: true
+    on_warn: fail
+    problem_on_unmodified_line: ignore
+
+  RailsBestPractices:
+    enabled: true
+    on_warn: fail
+    problem_on_unmodified_line: ignore
 
   TrailingWhitespace:
     enabled: true
+    on_warn: fail
 
   RailsSchemaUpToDate:
     enabled: true
+    on_warn: fail
 
-  RailsBestPractices:
+  FixMe:
+    enabled: true
+    keywords: ["fixme", "fix_me", "FIX_ME", "FIXME"]
+    exclude: ".overcommit.yml"
+    on_warn: fail
+
+  YamlSyntax:
+    enabled: true
+
+  JsonSyntax:
     enabled: true
 
 PrePush:
   Brakeman:
     enabled: true
+    quiet: true
 
 PostCheckout:
   BundleInstall:
